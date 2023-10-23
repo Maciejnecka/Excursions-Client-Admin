@@ -1,5 +1,24 @@
 {
-  "excursions": [],
+  "excursions": [
+    {
+      "title": "Kraków",
+      "description": "Odkryj urok historycznego Krakowa, odwiedzając Zamek Królewski na Wawelu, Rynek Główny i wiele innych zabytków. Przewodnik opowie Ci o historii tego pięknego miasta.",
+      "adultPrice": 75,
+      "childPrice": 40
+    },
+    {
+      "title": "Warszawa",
+      "description": "Zapraszamy Cię na fascynującą podróż po stolicy Polski. Zobacz Pałac Kultury i Nauki, Łazienki Królewskie i wiele innych atrakcji Warszawy.",
+      "adultPrice": 85,
+      "childPrice": 45
+    },
+    {
+      "title": "Wrocław",
+      "description": "Wrocław jest pełen uroku i historii. Ta wycieczka zabierze Cię na spacer po Starym Mieście, Ostrów Tumski i kolorowych mostach nad rzeką Odrą.",
+      "adultPrice": 70,
+      "childPrice": 35
+    }
+  ],
   "orders": [
     {
       "name": "sdsd",
@@ -152,6 +171,62 @@
       ],
       "total": 149,
       "id": 8
+    },
+    {
+      "name": "sdsd",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Zwiedzanie Krakowa",
+          "adults": 1,
+          "adultPrice": 75,
+          "children": 0,
+          "childPrice": 40,
+          "totalPrice": 75
+        },
+        {
+          "title": "Zwiedzanie Krakowa",
+          "adults": 0,
+          "adultPrice": 75,
+          "children": 1,
+          "childPrice": 40,
+          "totalPrice": 40
+        }
+      ],
+      "total": 115,
+      "id": 9
+    },
+    {
+      "name": "Test",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Kraków",
+          "adults": 1,
+          "adultPrice": 75,
+          "children": 0,
+          "childPrice": 40,
+          "totalPrice": 75
+        },
+        {
+          "title": "Warszawa",
+          "adults": 1,
+          "adultPrice": 85,
+          "children": 0,
+          "childPrice": 45,
+          "totalPrice": 85
+        },
+        {
+          "title": "Wrocław",
+          "adults": 1,
+          "adultPrice": 70,
+          "children": 0,
+          "childPrice": 35,
+          "totalPrice": 70
+        }
+      ],
+      "total": 230,
+      "id": 10
     }
   ]
 }
