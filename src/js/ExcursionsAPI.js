@@ -1,5 +1,3 @@
-class ExcursionsAPI {
-
-}
+class ExcursionsAPI {}
 
 export default ExcursionsAPI;
