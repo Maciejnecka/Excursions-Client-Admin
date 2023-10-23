@@ -4,19 +4,22 @@
       "title": "Kraków",
       "description": "Odkryj urok historycznego Krakowa, odwiedzając Zamek Królewski na Wawelu, Rynek Główny i wiele innych zabytków. Przewodnik opowie Ci o historii tego pięknego miasta.",
       "adultPrice": 75,
-      "childPrice": 40
+      "childPrice": 40,
+      "id": 1
     },
     {
       "title": "Warszawa",
       "description": "Zapraszamy Cię na fascynującą podróż po stolicy Polski. Zobacz Pałac Kultury i Nauki, Łazienki Królewskie i wiele innych atrakcji Warszawy.",
       "adultPrice": 85,
-      "childPrice": 45
+      "childPrice": 45,
+      "id": 2
     },
     {
       "title": "Wrocław",
       "description": "Wrocław jest pełen uroku i historii. Ta wycieczka zabierze Cię na spacer po Starym Mieście, Ostrów Tumski i kolorowych mostach nad rzeką Odrą.",
       "adultPrice": 70,
-      "childPrice": 35
+      "childPrice": 35,
+      "id": 3
     }
   ],
   "orders": [

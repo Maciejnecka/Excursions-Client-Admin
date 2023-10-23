@@ -1,4 +1,21 @@
 class ExcursionsAPI {
+  async fetchAdminExcursions() {
+    const apiUrl = 'http://localhost:3000/excursions';
+
+    try {
+      const response = await fetch(apiUrl);
+      if (response.ok) {
+        const data = await response.json();
+        return data;
+      } else {
+        throw new Error('Błąd podczas pobierania danych');
+      }
+    } catch (error) {
+      console.error('Błąd komunikacji z API: ', error);
+      throw new Error('Nie udało się pobrać danych o wycieczkach');
+    }
+  }
+
   async fetchExcursions() {
     const apiUrl = 'http://localhost:3000/excursions';
 
