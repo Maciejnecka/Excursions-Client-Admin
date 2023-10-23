@@ -2,13 +2,16 @@ import './../css/client.css';
 import ExcursionsAPI from './ExcursionsAPI';
 const excursionsAPI = new ExcursionsAPI();
 
-const cartList = document.querySelector('.panel__summary');
 const cart = [];
 
 const excursionsList = document.querySelector('.panel__excursions');
 excursionsList.addEventListener('submit', addToCart);
 
+const orderForm = document.querySelector('.panel__order');
+orderForm.addEventListener('submit', handleOrderForm);
+
 function renderCart() {
+  const cartList = document.querySelector('.panel__summary');
   cartList.innerHTML = '';
 
   const totalPrice = cart.reduce((sum, item) => sum + item.totalPrice, 0);
@@ -34,43 +37,6 @@ function renderCart() {
   });
 }
 
-const orderForm = document.querySelector('.panel__order');
-
-orderForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const nameInput = orderForm.querySelector('.order__field-input[name="name"]');
-  const emailInput = orderForm.querySelector(
-    '.order__field-input[name="email"]'
-  );
-  const name = nameInput.value;
-  const email = emailInput.value;
-
-  const formErrors = getFormErrors(name, email, cart);
-  if (formErrors.length > 0) {
-    alert(formErrors.join('\n'));
-    return;
-  }
-
-  const orderData = {
-    name,
-    email,
-    items: cart,
-    total: cart.reduce((sum, item) => sum + item.totalPrice, 0),
-  };
-  excursionsAPI
-    .sendOrder(orderData)
-    .then(() => {
-      alert('Zamówienie zostało wysłane pomyślnie!');
-      cart.length = 0;
-      renderCart();
-      resetFormInput(nameInput, emailInput);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-});
-
 function addToCart(event) {
   event.preventDefault();
 
@@ -93,24 +59,34 @@ function addToCart(event) {
   const children = parseInt(childrenInput.value);
   const childPrice = parseInt(childPriceInput.textContent);
 
-  if (isNaN(adults) || isNaN(children) || adults < 0 || children < 0) {
-    alert('Proszę wprowadzić poprawną ilość dorosłych i dzieci.');
+  if (isValidQuantity(adults) && isValidQuantity(children)) {
+    alert('Proszę wprowadzić poprawną ilość dorosłych lub dzieci.');
     return;
   }
 
-  const totalPrice = adults * adultPrice + children * childPrice;
+  const totalPrice =
+    (isNaN(adults) ? 0 : adults) * adultPrice +
+    (isNaN(children) ? 0 : children) * childPrice;
 
-  const cartItem = {
-    title,
-    adults,
-    adultPrice,
-    children,
-    childPrice,
-    totalPrice,
-  };
-  cart.push(cartItem);
-  resetExcursionsInput(adultsInput, childrenInput);
-  renderCart();
+  if (totalPrice > 0) {
+    const cartItem = {
+      title,
+      adults: isNaN(adults) ? 0 : adults,
+      adultPrice,
+      children: isNaN(children) ? 0 : children,
+      childPrice,
+      totalPrice,
+    };
+    cart.push(cartItem);
+    resetExcursionsInput(adultsInput, childrenInput);
+    renderCart();
+  } else {
+    alert('Proszę wprowadzić poprawną ilość dorosłych lub dzieci.');
+  }
+}
+
+function isValidQuantity(quantity) {
+  return isNaN(quantity) || quantity <= 0;
 }
 
 function removeCartItem(e) {
@@ -167,6 +143,46 @@ function getFormErrors(name, email, cart) {
 function resetExcursionsInput(adultsInput, childrenInput) {
   adultsInput.value = '';
   childrenInput.value = '';
+}
+
+function handleOrderForm(e) {
+  e.preventDefault();
+  const nameInput = orderForm.querySelector('.order__field-input[name="name"]');
+  const emailInput = orderForm.querySelector(
+    '.order__field-input[name="email"]'
+  );
+  const name = nameInput.value;
+  const email = emailInput.value;
+
+  const formErrors = getFormErrors(name, email, cart);
+  if (formErrors.length > 0) {
+    alert(formErrors.join('\n'));
+    return;
+  }
+
+  const orderData = {
+    name,
+    email,
+    items: cart,
+    total: cart.reduce((sum, item) => sum + item.totalPrice, 0),
+  };
+
+  sendOrderToAPI(orderData, nameInput, emailInput);
+}
+
+async function sendOrderToAPI(orderData, nameInput, emailInput) {
+  try {
+    const response = await excursionsAPI.sendOrder(orderData);
+    if (response) {
+      alert('Zamówienie zostało wysłane pomyślnie!');
+      cart.length = 0;
+      renderCart();
+      resetFormInput(nameInput, emailInput);
+    }
+  } catch (error) {
+    console.error(error);
+    alert('Wystąpił błąd podczas komunikacji z serwerem.');
+  }
 }
 
 function resetFormInput(nameInput, emailInput) {
