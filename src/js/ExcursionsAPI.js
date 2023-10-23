@@ -57,6 +57,51 @@ class ExcursionsAPI {
         throw new Error('Wystąpił błąd podczas komunikacji z serwerem.');
       });
   }
+
+  async addExcursion(data) {
+    const apiUrl = 'http://localhost:3000/excursions';
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+
+    try {
+      const response = await fetch(apiUrl, options);
+      if (response.ok) {
+        const newExcursion = await response.json();
+        return newExcursion;
+      } else {
+        throw new Error('Błąd podczas dodawania wycieczki.');
+      }
+    } catch (error) {
+      console.error('Błąd komunikacji z API:', error);
+      throw new Error('Wystąpił błąd podczas dodawania wycieczki.');
+    }
+  }
+
+  async removeExcursion(excursionId) {
+    const apiUrl = `http://localhost:3000/excursions/${excursionId}`;
+
+    const options = {
+      method: 'DELETE',
+    };
+
+    try {
+      const response = await fetch(apiUrl, options);
+      if (response.ok) {
+        return true;
+      } else {
+        throw new Error('Błąd podczas usuwania wycieczki.');
+      }
+    } catch (error) {
+      console.error('Błąd komunikacji z API:', error);
+      throw new Error('Wystąpił błąd podczas usuwania wycieczki.');
+    }
+  }
 }
 
 export default ExcursionsAPI;

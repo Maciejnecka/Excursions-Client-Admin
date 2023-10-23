@@ -1,25 +1,32 @@
 {
   "excursions": [
     {
-      "title": "Kraków",
-      "description": "Odkryj urok historycznego Krakowa, odwiedzając Zamek Królewski na Wawelu, Rynek Główny i wiele innych zabytków. Przewodnik opowie Ci o historii tego pięknego miasta.",
-      "adultPrice": 75,
-      "childPrice": 40,
-      "id": 1
-    },
-    {
-      "title": "Warszawa",
-      "description": "Zapraszamy Cię na fascynującą podróż po stolicy Polski. Zobacz Pałac Kultury i Nauki, Łazienki Królewskie i wiele innych atrakcji Warszawy.",
-      "adultPrice": 85,
-      "childPrice": 45,
-      "id": 2
+      "title": "Gdańsk",
+      "description": "Gdańsk to urokliwe miasto nad morzem Bałtyckim. Podczas tej wycieczki zwiedzisz słynne Muzeum II Wojny Światowej, spacerujesz po długim molo i odkrywasz bogatą historię miasta. Cena biletu dla dorosłego: 230 PLN, cena biletu dla dziecka: 115 PLN.",
+      "adultPrice": 230,
+      "childPrice": 115,
+      "id": 7
     },
     {
       "title": "Wrocław",
-      "description": "Wrocław jest pełen uroku i historii. Ta wycieczka zabierze Cię na spacer po Starym Mieście, Ostrów Tumski i kolorowych mostach nad rzeką Odrą.",
-      "adultPrice": 70,
-      "childPrice": 35,
-      "id": 3
+      "description": "Wrocław to urocze miasto z licznymi mostami i malowniczymi rzekami. Podczas tej wycieczki zwiedzisz Stare Miasto, Ostrów Tumski i wiele innych atrakcji. Cena biletu dla dorosłego: 220 PLN, cena biletu dla dziecka: 110 PLN.",
+      "adultPrice": 220,
+      "childPrice": 110,
+      "id": 6
+    },
+    {
+      "title": "Kraków",
+      "description": "Kraków to magiczne miasto pełne historii, kultury i wspaniałej architektury. Podczas tej wycieczki będziesz miał okazję odwiedzić słynny Wawel, spacerować po Rynku Głównym i zasmakować tradycyjnych polskich potraw. Cena biletu dla dorosłego: 250 PLN, cena biletu dla dziecka: 120 PLN.",
+      "adultPrice": 250,
+      "childPrice": 120,
+      "id": 5
+    },
+    {
+      "title": "Dodane",
+      "description": "Testowo",
+      "adultPrice": 99,
+      "childPrice": 45,
+      "id": 8
     }
   ],
   "orders": [
@@ -230,6 +237,38 @@
       ],
       "total": 230,
       "id": 10
+    },
+    {
+      "name": "sdsd",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Kraków",
+          "adults": 1,
+          "adultPrice": 250,
+          "children": 0,
+          "childPrice": 120,
+          "totalPrice": 250
+        },
+        {
+          "title": "Wrocław",
+          "adults": 1,
+          "adultPrice": 220,
+          "children": 0,
+          "childPrice": 110,
+          "totalPrice": 220
+        },
+        {
+          "title": "Gdańsk",
+          "adults": 0,
+          "adultPrice": 230,
+          "children": 1,
+          "childPrice": 115,
+          "totalPrice": 115
+        }
+      ],
+      "total": 585,
+      "id": 11
     }
   ]
 }
