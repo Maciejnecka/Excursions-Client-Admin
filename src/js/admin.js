@@ -2,8 +2,7 @@ import './../css/admin.css';
 
 import ExcursionsAPI from './ExcursionsAPI';
 
-function addExcursionToUI(excursion) {
-  const excursionsList = document.querySelector('.panel__excursions');
+function createExcursionElement(excursion) {
   const newExcursion = document.createElement('li');
   newExcursion.classList.add('excursions__item');
   newExcursion.setAttribute('data-id', excursion.id);
@@ -38,8 +37,24 @@ function addExcursionToUI(excursion) {
       </form>
   `;
 
-  excursionsList.appendChild(newExcursion);
+  return newExcursion;
+}
 
+function addExcursionToUI(excursion) {
+  const excursionsList = document.querySelector('.panel__excursions');
+  const newExcursion = createExcursionElement(excursion);
+
+  excursionsList.appendChild(newExcursion);
+  clearInputFields();
+
+  newExcursion
+    .querySelector('.excursions__field-input--update')
+    .addEventListener('click', () => {
+      updateExcursionUI(excursion, newExcursion);
+    });
+}
+
+function clearInputFields() {
   const nameInput = document.getElementById('excursion-title');
   const descriptionInput = document.getElementById('excursion-description');
   const adultPriceInput = document.getElementById('excursion-adult-price');
@@ -49,12 +64,6 @@ function addExcursionToUI(excursion) {
   descriptionInput.value = '';
   adultPriceInput.value = '';
   childPriceInput.value = '';
-
-  newExcursion
-    .querySelector('.excursions__field-input--update')
-    .addEventListener('click', () => {
-      updateExcursionUI(excursion, newExcursion);
-    });
 }
 
 async function displayExcursions() {
@@ -71,21 +80,22 @@ async function displayExcursions() {
 
 displayExcursions();
 
-// add item
+document.querySelector('.form').addEventListener('submit', handleFormAdd);
 
-document.querySelector('.form').addEventListener('submit', async (e) => {
-  e.preventDefault();
+async function handleFormAdd(event) {
+  event.preventDefault();
 
-  const name = document.getElementById('excursion-title').value;
-  const description = document.getElementById('excursion-description').value;
-  const adultPrice = parseFloat(
-    document.getElementById('excursion-adult-price').value
-  );
-  const childPrice = parseFloat(
-    document.getElementById('excursion-child-price').value
-  );
+  const nameInput = document.getElementById('excursion-title');
+  const descriptionInput = document.getElementById('excursion-description');
+  const adultPriceInput = document.getElementById('excursion-adult-price');
+  const childPriceInput = document.getElementById('excursion-child-price');
 
-  if (name && description && !isNaN(adultPrice) && !isNaN(childPrice)) {
+  const name = nameInput.value;
+  const description = descriptionInput.value;
+  const adultPrice = parseFloat(adultPriceInput.value);
+  const childPrice = parseFloat(childPriceInput.value);
+
+  if (validateInput(name, description, adultPrice, childPrice)) {
     const data = {
       title: name,
       description: description,
@@ -94,8 +104,7 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
     };
 
     try {
-      const api = new ExcursionsAPI();
-      const newExcursion = await api.addExcursion(data);
+      const newExcursion = await addExcursion(data);
       addExcursionToUI(newExcursion);
     } catch (error) {
       console.error('Błąd podczas dodawania wycieczki: ', error);
@@ -103,24 +112,41 @@ document.querySelector('.form').addEventListener('submit', async (e) => {
   } else {
     console.error('Błąd walidacji danych');
   }
-});
+}
 
-// remove excursion
+function validateInput(name, description, adultPrice, childPrice) {
+  return name && description && !isNaN(adultPrice) && !isNaN(childPrice);
+}
+
+async function addExcursion(data) {
+  try {
+    const api = new ExcursionsAPI();
+    return await api.addExcursion(data);
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function handleRemoveClick(event) {
+  if (event.target.classList.contains('excursions__field-input--remove')) {
+    const listItem = event.target.closest('li');
+    if (!listItem) return;
+
+    const excursionId = listItem.getAttribute('data-id');
+    listItem.remove();
+
+    try {
+      const api = new ExcursionsAPI();
+      await api.removeExcursion(excursionId);
+    } catch (error) {
+      console.error('Błąd podczas usuwania wycieczki: ', error);
+    }
+  }
+}
+
 document
   .querySelector('.panel__excursions')
-  .addEventListener('click', async (event) => {
-    if (event.target.classList.contains('excursions__field-input--remove')) {
-      const excursionId = event.target.closest('li').getAttribute('data-id');
-      event.target.closest('li').remove();
-
-      try {
-        const api = new ExcursionsAPI();
-        await api.removeExcursion(excursionId);
-      } catch (error) {
-        console.error('Błąd podczas usuwania wycieczki: ', error);
-      }
-    }
-  });
+  .addEventListener('click', handleRemoveClick);
 
 function updateExcursionUI(excursion, listItem) {
   listItem.innerHTML = `

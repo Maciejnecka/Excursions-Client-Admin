@@ -1,32 +1,25 @@
 {
   "excursions": [
     {
-      "id": 7,
-      "title": "Gdańsk",
-      "description": "Gdańsk to urokliwe miasto nad morzem Bałtyckim. Podczas tej wycieczki zwiedzisz słynne Muzeum II Wojny Światowej, spacerujesz po długim molo i odkrywasz bogatą historię miasta. Cena biletu dla dorosłego: 230 PLN, cena biletu dla dziecka: 115 PLN.",
-      "adultPrice": 222,
-      "childPrice": 11
-    },
-    {
       "id": 5,
       "title": "Kraków",
-      "description": "Kraków to magiczne miasto pełne historii, kultury i wspaniałej architektury. Podczas tej wycieczki będziesz miał okazję odwiedzić słynny Wawel, spacerować po Rynku Głównym i zasmakować tradycyjnych polskich potraw. Cena biletu dla dorosłego: 250 PLN, cena biletu dla dziecka: 120 PLN.",
-      "adultPrice": 2501,
+      "description": "Kraków to magiczne miasto pełne historii, kultury i wspaniałej architektury. Podczas tej wycieczki będziesz miał okazję odwiedzić słynny Wawel, spacerować po Rynku Głównym i zasmakować tradycyjnych polskich potraw. Cena biletu dla dorosłego: 250 PLN, cena biletu dla dziecka: 120 PLN.dfdfdfdf",
+      "adultPrice": 25013,
       "childPrice": 1201
     },
     {
       "id": 8,
       "title": "Gdańsk",
       "description": "Gdańsk to urokliwe miasto nad morzem Bałtyckim. Podczas tej wycieczki zwiedzisz słynne Muzeum II Wojny Światowej, spacerujesz po długim molo i odkrywasz bogatą historię miasta. Cena biletu dla dorosłego: 230 PLN, cena biletu dla dziecka: 115 PLN.",
-      "adultPrice": 333,
-      "childPrice": 125
+      "adultPrice": 3333,
+      "childPrice": 1253
     },
     {
-      "title": "1",
-      "description": "1",
-      "adultPrice": 3,
-      "childPrice": 2,
-      "id": 9
+      "id": 11,
+      "title": "test",
+      "description": "ss3333",
+      "adultPrice": 2,
+      "childPrice": 2
     }
   ],
   "orders": [
