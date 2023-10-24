@@ -1,25 +1,25 @@
 import './../css/client.css';
 import ExcursionsAPI from './ExcursionsAPI';
+
 const excursionsAPI = new ExcursionsAPI();
-
 const cart = [];
-
 const excursionsList = document.querySelector('.panel__excursions');
-excursionsList.addEventListener('submit', addToCart);
-
 const orderForm = document.querySelector('.panel__order');
+
+excursionsList.addEventListener('submit', addToCart);
 orderForm.addEventListener('submit', handleOrderForm);
+
+loadExcursions();
 
 async function loadExcursions() {
   try {
-    const excursions = await excursionsAPI.fetchExcursions();
+    const excursions = await excursionsAPI.fetchData(excursionsAPI.apiUrl);
     renderExcursionsList(excursions);
   } catch (error) {
     console.error(error);
     alert('Błąd podczas ładowania danych');
   }
 }
-loadExcursions();
 
 function renderExcursionsList(excursions) {
   const excursionsList = document.querySelector('.panel__excursions');
@@ -85,8 +85,8 @@ function renderCart() {
     cartItem.innerHTML = `
       <h3 class="summary__title">
         <span class="summary__name">${item.title}</span>
-        <strong class="summay__total-price">${item.totalPrice} PLN</strong>
-           <a href="#" class="summary__btn-remove" title="usuń" data-item-index="${index}"> «« Usuń</a>
+        <strong class="summary__total-price">${item.totalPrice} PLN</strong>
+           <a href="#" class="summary__btn-remove" title="usuń" data-item-index="${index}">«« Usuń</a>
       </h3>
       <p class="summary__prices">dorośli: ${item.adults} x ${item.adultPrice} PLN, dzieci: ${item.children} x ${item.childPrice} PLN</p>
     `;
@@ -141,6 +141,7 @@ function addToCart(event) {
     }
   }
 }
+
 function removeCartItem(e) {
   e.preventDefault();
   const itemIndex = e.target.getAttribute('data-item-index');
@@ -148,6 +149,51 @@ function removeCartItem(e) {
     cart.splice(itemIndex, 1);
     renderCart();
   }
+}
+
+function handleOrderForm(e) {
+  e.preventDefault();
+  const nameInput = orderForm.querySelector('.order__field-input[name="name"]');
+  const emailInput = orderForm.querySelector(
+    '.order__field-input[name="email"]'
+  );
+  const name = nameInput.value;
+  const email = emailInput.value;
+
+  const formErrors = getFormErrors(name, email, cart);
+  if (formErrors.length > 0) {
+    alert(formErrors.join('\n'));
+    return;
+  }
+
+  const orderData = {
+    name,
+    email,
+    items: cart,
+    total: cart.reduce((sum, item) => sum + item.totalPrice, 0),
+  };
+
+  sendOrderToAPI(orderData, nameInput, emailInput);
+}
+
+async function sendOrderToAPI(orderData, nameInput, emailInput) {
+  try {
+    const response = await excursionsAPI.sendOrder(orderData);
+    if (response) {
+      alert('Zamówienie zostało wysłane pomyślnie!');
+      cart.length = 0;
+      renderCart();
+      resetFormInput(nameInput, emailInput);
+    }
+  } catch (error) {
+    console.error(error);
+    alert('Wystąpił błąd podczas komunikacji z serwerem.');
+  }
+}
+
+function resetFormInput(nameInput, emailInput) {
+  nameInput.value = '';
+  emailInput.value = '';
 }
 
 function getFormErrors(name, email, cart) {
@@ -195,49 +241,4 @@ function getFormErrors(name, email, cart) {
 function resetExcursionsInput(adultsInput, childrenInput) {
   adultsInput.value = '';
   childrenInput.value = '';
-}
-
-function handleOrderForm(e) {
-  e.preventDefault();
-  const nameInput = orderForm.querySelector('.order__field-input[name="name"]');
-  const emailInput = orderForm.querySelector(
-    '.order__field-input[name="email"]'
-  );
-  const name = nameInput.value;
-  const email = emailInput.value;
-
-  const formErrors = getFormErrors(name, email, cart);
-  if (formErrors.length > 0) {
-    alert(formErrors.join('\n'));
-    return;
-  }
-
-  const orderData = {
-    name,
-    email,
-    items: cart,
-    total: cart.reduce((sum, item) => sum + item.totalPrice, 0),
-  };
-
-  sendOrderToAPI(orderData, nameInput, emailInput);
-}
-
-async function sendOrderToAPI(orderData, nameInput, emailInput) {
-  try {
-    const response = await excursionsAPI.sendOrder(orderData);
-    if (response) {
-      alert('Zamówienie zostało wysłane pomyślnie!');
-      cart.length = 0;
-      renderCart();
-      resetFormInput(nameInput, emailInput);
-    }
-  } catch (error) {
-    console.error(error);
-    alert('Wystąpił błąd podczas komunikacji z serwerem.');
-  }
-}
-
-function resetFormInput(nameInput, emailInput) {
-  nameInput.value = '';
-  emailInput.value = '';
 }

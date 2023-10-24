@@ -60,7 +60,7 @@ function addExcursionToUI(excursion) {
 async function displayExcursions() {
   const api = new ExcursionsAPI();
   try {
-    const excursions = await api.fetchExcursions();
+    const excursions = await api.fetchData(api.apiUrl);
     excursions.forEach((excursion) => {
       addExcursionToUI(excursion);
     });

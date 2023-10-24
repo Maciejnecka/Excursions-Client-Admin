@@ -4,29 +4,29 @@
       "id": 7,
       "title": "Gdańsk",
       "description": "Gdańsk to urokliwe miasto nad morzem Bałtyckim. Podczas tej wycieczki zwiedzisz słynne Muzeum II Wojny Światowej, spacerujesz po długim molo i odkrywasz bogatą historię miasta. Cena biletu dla dorosłego: 230 PLN, cena biletu dla dziecka: 115 PLN.",
-      "adultPrice": 230,
-      "childPrice": 115
-    },
-    {
-      "id": 6,
-      "title": "Wrocław",
-      "description": "Wrocław to urocze miasto z licznymi mostami i malowniczymi rzekami. Podczas tej wycieczki zwiedzisz Stare Miasto, Ostrów Tumski i wiele innych atrakcji. Cena biletu dla dorosłego: 220 PLN, cena biletu dla dziecka: 110 PLN.",
-      "adultPrice": 220,
-      "childPrice": 110
+      "adultPrice": 222,
+      "childPrice": 11
     },
     {
       "id": 5,
       "title": "Kraków",
       "description": "Kraków to magiczne miasto pełne historii, kultury i wspaniałej architektury. Podczas tej wycieczki będziesz miał okazję odwiedzić słynny Wawel, spacerować po Rynku Głównym i zasmakować tradycyjnych polskich potraw. Cena biletu dla dorosłego: 250 PLN, cena biletu dla dziecka: 120 PLN.",
-      "adultPrice": 250,
-      "childPrice": 120
+      "adultPrice": 2501,
+      "childPrice": 1201
     },
     {
+      "id": 8,
       "title": "Gdańsk",
       "description": "Gdańsk to urokliwe miasto nad morzem Bałtyckim. Podczas tej wycieczki zwiedzisz słynne Muzeum II Wojny Światowej, spacerujesz po długim molo i odkrywasz bogatą historię miasta. Cena biletu dla dorosłego: 230 PLN, cena biletu dla dziecka: 115 PLN.",
-      "adultPrice": 222,
-      "childPrice": 125,
-      "id": 8
+      "adultPrice": 333,
+      "childPrice": 125
+    },
+    {
+      "title": "1",
+      "description": "1",
+      "adultPrice": 3,
+      "childPrice": 2,
+      "id": 9
     }
   ],
   "orders": [
@@ -269,6 +269,102 @@
       ],
       "total": 585,
       "id": 11
+    },
+    {
+      "name": "1",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Wrocław",
+          "adults": 1,
+          "adultPrice": 220,
+          "children": 0,
+          "childPrice": 110,
+          "totalPrice": 220
+        }
+      ],
+      "total": 220,
+      "id": 12
+    },
+    {
+      "name": "1",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Wrocław",
+          "adults": 0,
+          "adultPrice": 220,
+          "children": 1,
+          "childPrice": 110,
+          "totalPrice": 110
+        }
+      ],
+      "total": 110,
+      "id": 13
+    },
+    {
+      "name": "sdsd",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Gdańsk",
+          "adults": 1,
+          "adultPrice": 222,
+          "children": 0,
+          "childPrice": 11,
+          "totalPrice": 222
+        }
+      ],
+      "total": 222,
+      "id": 14
+    },
+    {
+      "name": "sdsd",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Wrocław",
+          "adults": 0,
+          "adultPrice": 220,
+          "children": 1,
+          "childPrice": 110,
+          "totalPrice": 110
+        }
+      ],
+      "total": 110,
+      "id": 15
+    },
+    {
+      "name": "sdsd",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Wrocław",
+          "adults": 1,
+          "adultPrice": 220,
+          "children": 0,
+          "childPrice": 110,
+          "totalPrice": 220
+        }
+      ],
+      "total": 220,
+      "id": 16
+    },
+    {
+      "name": "1",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Gdańsk",
+          "adults": 1,
+          "adultPrice": 222,
+          "children": 0,
+          "childPrice": 11,
+          "totalPrice": 222
+        }
+      ],
+      "total": 222,
+      "id": 17
     }
   ]
 }

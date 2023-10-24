@@ -1,39 +1,22 @@
 class ExcursionsAPI {
-  async fetchAdminExcursions() {
-    const apiUrl = 'http://localhost:3000/excursions';
-
-    try {
-      const response = await fetch(apiUrl);
-      if (response.ok) {
-        const data = await response.json();
-        return data;
-      } else {
-        throw new Error('Błąd podczas pobierania danych');
-      }
-    } catch (error) {
-      console.error('Błąd komunikacji z API: ', error);
-      throw new Error('Nie udało się pobrać danych o wycieczkach');
-    }
+  constructor() {
+    this.apiUrl = 'http://localhost:3000/excursions';
   }
 
-  async fetchExcursions() {
-    const apiUrl = 'http://localhost:3000/excursions';
-
+  async fetchData(apiUrl) {
     try {
       const response = await fetch(apiUrl);
       if (response.ok) {
         const data = await response.json();
         return data;
-      } else {
-        throw new Error('Błąd podczas pobierania danych');
       }
     } catch (error) {
-      console.error('Błąd komunikacji z API:'.error);
-      throw new Error('Nie udało się pobrać danych o wycieczkach');
+      this.handleAPIError(error, 'Nie udało się pobrać danych o wycieczkach');
     }
   }
 
   async sendOrder(orderData) {
+    const apiUrl = 'http://localhost:3000/orders';
     const options = {
       method: 'POST',
       headers: {
@@ -41,8 +24,6 @@ class ExcursionsAPI {
       },
       body: JSON.stringify(orderData),
     };
-
-    const apiUrl = 'http://localhost:3000/orders';
 
     return fetch(apiUrl, options)
       .then((response) => {
@@ -53,8 +34,10 @@ class ExcursionsAPI {
         }
       })
       .catch((error) => {
-        console.error('Błąd podczas komunikacji z API:', error);
-        throw new Error('Wystąpił błąd podczas komunikacji z serwerem.');
+        this.handleAPIError(
+          error,
+          'Wystąpił błąd podczas dodawania wyczieczki.'
+        );
       });
   }
 
@@ -78,8 +61,7 @@ class ExcursionsAPI {
         throw new Error('Błąd podczas dodawania wycieczki.');
       }
     } catch (error) {
-      console.error('Błąd komunikacji z API:', error);
-      throw new Error('Wystąpił błąd podczas dodawania wycieczki.');
+      this.handleAPIError(error, 'Wystąpił błąd podczas dodawania wycieczki');
     }
   }
 
@@ -89,7 +71,6 @@ class ExcursionsAPI {
     const options = {
       method: 'DELETE',
     };
-
     try {
       const response = await fetch(apiUrl, options);
       if (response.ok) {
@@ -98,8 +79,7 @@ class ExcursionsAPI {
         throw new Error('Błąd podczas usuwania wycieczki.');
       }
     } catch (error) {
-      console.error('Błąd komunikacji z API:', error);
-      throw new Error('Wystąpił błąd podczas usuwania wycieczki.');
+      this.handleAPIError(error, 'Wystąpił błąd podczas usuwania wycieczki');
     }
   }
   async updateExcursion(updatedExcursion) {
@@ -122,9 +102,15 @@ class ExcursionsAPI {
         throw new Error('Błąd podczas aktualizacji wycieczki.');
       }
     } catch (error) {
-      console.error('Błąd komunikacji z API:', error);
-      throw new Error('Wystąpił błąd podczas aktualizacji wycieczki.');
+      this.handleAPIError(error, 'Wystąpił błąd podczas aktualizacji wycieczi');
     }
+  }
+
+  handleAPIError(error, ErrorMessage) {
+    console.error('Błąd komunikacji z API:', error);
+    throw new Error(
+      ErrorMessage || 'Wystąpił błąd podczas aktualizacji wycieczki'
+    );
   }
 }
 
