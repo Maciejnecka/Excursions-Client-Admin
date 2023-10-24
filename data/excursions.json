@@ -1,363 +1,106 @@
 {
   "excursions": [
     {
-      "id": 5,
-      "title": "Kraków",
-      "description": "Kraków to magiczne miasto pełne historii, kultury i wspaniałej architektury. Podczas tej wycieczki będziesz miał okazję odwiedzić słynny Wawel, spacerować po Rynku Głównym i zasmakować tradycyjnych polskich potraw. Cena biletu dla dorosłego: 250 PLN, cena biletu dla dziecka: 120 PLN.dfdfdfdf",
-      "adultPrice": 25013,
-      "childPrice": 1201
+      "title": "Historia i Kultura Gdańska",
+      "description": "Odkryj fascynującą historię i kulturę Gdańska podczas tej wycieczki. Zwiedzaj Muzeum II Wojny Światowej, spaceruj po długim molo i poznawaj tajemnice tego urokliwego miasta. Cena biletu dla dorosłego: 230 PLN, cena biletu dla dziecka: 115 PLN",
+      "adultPrice": 230,
+      "childPrice": 115,
+      "id": 12
     },
     {
-      "id": 8,
-      "title": "Gdańsk",
-      "description": "Gdańsk to urokliwe miasto nad morzem Bałtyckim. Podczas tej wycieczki zwiedzisz słynne Muzeum II Wojny Światowej, spacerujesz po długim molo i odkrywasz bogatą historię miasta. Cena biletu dla dorosłego: 230 PLN, cena biletu dla dziecka: 115 PLN.",
-      "adultPrice": 3333,
-      "childPrice": 1253
+      "id": 13,
+      "title": "Morska Przygoda w Gdańsku",
+      "description": "Rozpocznij swoją morską przygodę w Gdańsku! Ta wycieczka pozwoli Ci odkryć urok miasta nad Bałtykiem. Zwiedzaj Muzeum II Wojny Światowej, spaceruj po długim molo i ciesz się pięknymi widokami. Cena biletu dla dorosłego: 150 PLN, cena biletu dla dziecka: 75 PLN.",
+      "adultPrice": 150,
+      "childPrice": 75
     },
     {
-      "id": 11,
-      "title": "test",
-      "description": "ss3333",
-      "adultPrice": 2,
-      "childPrice": 2
+      "title": "Gdańsk w Weekend",
+      "description": "Spędź weekend w magicznym Gdańsku! Zwiedzaj Muzeum II Wojny Światowej, spaceruj po długim molo i smakuj lokalnej kuchni. Cena biletu dla dorosłego: 350 PLN, cena biletu dla dziecka: 175 PLN.",
+      "adultPrice": 350,
+      "childPrice": 175,
+      "id": 14
+    },
+    {
+      "title": "Gdańsk - Miasto Nad Morzem",
+      "description": "Odwiedź urokliwe miasto nad morzem Bałtyckim - Gdańsk. Zwiedzaj Muzeum II Wojny Światowej, spaceruj po długim molo i poznawaj historię miasta. Cena biletu dla dorosłego: 430 PLN, cena biletu dla dziecka: 215 PLN.",
+      "adultPrice": 430,
+      "childPrice": 215,
+      "id": 15
     }
   ],
   "orders": [
     {
-      "name": "sdsd",
-      "email": "scorpsnake001@gmail.com",
+      "name": "Maciek",
+      "email": "maciek@maciek.com",
       "items": [
         {
-          "title": "Ogrodzieniec",
-          "adults": 1,
-          "adultPrice": 99,
-          "children": 1,
-          "childPrice": 50,
-          "totalPrice": 149
+          "title": "Historia i Kultura Gdańska",
+          "adults": 2,
+          "adultPrice": 230,
+          "children": 2,
+          "childPrice": 115,
+          "totalPrice": 690
         }
       ],
-      "total": 149,
+      "total": 690,
       "id": 1
     },
     {
       "name": "Maciek",
-      "email": "scorpsnake001@gmail.com",
+      "email": "maciek@maciek.com",
       "items": [
         {
-          "title": "Ogrodzieniec",
-          "adults": 1,
-          "adultPrice": 99,
-          "children": 1,
-          "childPrice": 50,
-          "totalPrice": 149
+          "title": "Morska Przygoda w Gdańsku",
+          "adults": 2,
+          "adultPrice": 150,
+          "children": 2,
+          "childPrice": 75,
+          "totalPrice": 450
+        },
+        {
+          "title": "Historia i Kultura Gdańska",
+          "adults": 2,
+          "adultPrice": 230,
+          "children": 2,
+          "childPrice": 115,
+          "totalPrice": 690
+        },
+        {
+          "title": "Gdańsk w Weekend",
+          "adults": 2,
+          "adultPrice": 350,
+          "children": 2,
+          "childPrice": 175,
+          "totalPrice": 1050
+        },
+        {
+          "title": "Gdańsk - Miasto Nad Morzem",
+          "adults": 2,
+          "adultPrice": 430,
+          "children": 2,
+          "childPrice": 215,
+          "totalPrice": 1290
         }
       ],
-      "total": 149,
+      "total": 3480,
       "id": 2
     },
     {
-      "name": "sdsd",
-      "email": "scorpsnake001@gmail.com",
+      "name": "Maciek",
+      "email": "maciek@test.com",
       "items": [
         {
-          "title": "Ogrodzieniec",
+          "title": "Gdańsk - Miasto Nad Morzem",
           "adults": 1,
-          "adultPrice": 99,
-          "children": 1,
-          "childPrice": 50,
-          "totalPrice": 149
+          "adultPrice": 430,
+          "children": 0,
+          "childPrice": 215,
+          "totalPrice": 430
         }
       ],
-      "total": 149,
+      "total": 430,
       "id": 3
-    },
-    {
-      "name": "sdsd",
-      "email": "maciekmck209@gmail.com",
-      "items": [
-        {
-          "title": "Ogrodzieniec",
-          "adults": 1,
-          "adultPrice": 99,
-          "children": 1,
-          "childPrice": 50,
-          "totalPrice": 149
-        },
-        {
-          "title": "Ogrodzieniec",
-          "adults": 0,
-          "adultPrice": 99,
-          "children": 1,
-          "childPrice": 50,
-          "totalPrice": 50
-        },
-        {
-          "title": "Ogrodzieniec",
-          "adults": 1,
-          "adultPrice": 99,
-          "children": 0,
-          "childPrice": 50,
-          "totalPrice": 99
-        }
-      ],
-      "total": 298,
-      "id": 4
-    },
-    {
-      "name": "sdsd",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Ogrodzieniec",
-          "adults": 1,
-          "adultPrice": 99,
-          "children": 0,
-          "childPrice": 50,
-          "totalPrice": 99
-        }
-      ],
-      "total": 99,
-      "id": 5
-    },
-    {
-      "name": "sdsd",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Ogrodzieniec",
-          "adults": 1,
-          "adultPrice": 99,
-          "children": 0,
-          "childPrice": 50,
-          "totalPrice": 99
-        }
-      ],
-      "total": 99,
-      "id": 6
-    },
-    {
-      "name": "Test test",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Ogrodzieniec",
-          "adults": 1,
-          "adultPrice": 99,
-          "children": 0,
-          "childPrice": 50,
-          "totalPrice": 99
-        }
-      ],
-      "total": 99,
-      "id": 7
-    },
-    {
-      "name": "sdsd",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Ogrodzieniec",
-          "adults": 1,
-          "adultPrice": 99,
-          "children": 0,
-          "childPrice": 50,
-          "totalPrice": 99
-        },
-        {
-          "title": "Ogrodzieniec",
-          "adults": 0,
-          "adultPrice": 99,
-          "children": 1,
-          "childPrice": 50,
-          "totalPrice": 50
-        }
-      ],
-      "total": 149,
-      "id": 8
-    },
-    {
-      "name": "sdsd",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Zwiedzanie Krakowa",
-          "adults": 1,
-          "adultPrice": 75,
-          "children": 0,
-          "childPrice": 40,
-          "totalPrice": 75
-        },
-        {
-          "title": "Zwiedzanie Krakowa",
-          "adults": 0,
-          "adultPrice": 75,
-          "children": 1,
-          "childPrice": 40,
-          "totalPrice": 40
-        }
-      ],
-      "total": 115,
-      "id": 9
-    },
-    {
-      "name": "Test",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Kraków",
-          "adults": 1,
-          "adultPrice": 75,
-          "children": 0,
-          "childPrice": 40,
-          "totalPrice": 75
-        },
-        {
-          "title": "Warszawa",
-          "adults": 1,
-          "adultPrice": 85,
-          "children": 0,
-          "childPrice": 45,
-          "totalPrice": 85
-        },
-        {
-          "title": "Wrocław",
-          "adults": 1,
-          "adultPrice": 70,
-          "children": 0,
-          "childPrice": 35,
-          "totalPrice": 70
-        }
-      ],
-      "total": 230,
-      "id": 10
-    },
-    {
-      "name": "sdsd",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Kraków",
-          "adults": 1,
-          "adultPrice": 250,
-          "children": 0,
-          "childPrice": 120,
-          "totalPrice": 250
-        },
-        {
-          "title": "Wrocław",
-          "adults": 1,
-          "adultPrice": 220,
-          "children": 0,
-          "childPrice": 110,
-          "totalPrice": 220
-        },
-        {
-          "title": "Gdańsk",
-          "adults": 0,
-          "adultPrice": 230,
-          "children": 1,
-          "childPrice": 115,
-          "totalPrice": 115
-        }
-      ],
-      "total": 585,
-      "id": 11
-    },
-    {
-      "name": "1",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Wrocław",
-          "adults": 1,
-          "adultPrice": 220,
-          "children": 0,
-          "childPrice": 110,
-          "totalPrice": 220
-        }
-      ],
-      "total": 220,
-      "id": 12
-    },
-    {
-      "name": "1",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Wrocław",
-          "adults": 0,
-          "adultPrice": 220,
-          "children": 1,
-          "childPrice": 110,
-          "totalPrice": 110
-        }
-      ],
-      "total": 110,
-      "id": 13
-    },
-    {
-      "name": "sdsd",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Gdańsk",
-          "adults": 1,
-          "adultPrice": 222,
-          "children": 0,
-          "childPrice": 11,
-          "totalPrice": 222
-        }
-      ],
-      "total": 222,
-      "id": 14
-    },
-    {
-      "name": "sdsd",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Wrocław",
-          "adults": 0,
-          "adultPrice": 220,
-          "children": 1,
-          "childPrice": 110,
-          "totalPrice": 110
-        }
-      ],
-      "total": 110,
-      "id": 15
-    },
-    {
-      "name": "sdsd",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Wrocław",
-          "adults": 1,
-          "adultPrice": 220,
-          "children": 0,
-          "childPrice": 110,
-          "totalPrice": 220
-        }
-      ],
-      "total": 220,
-      "id": 16
-    },
-    {
-      "name": "1",
-      "email": "scorpsnake001@gmail.com",
-      "items": [
-        {
-          "title": "Gdańsk",
-          "adults": 1,
-          "adultPrice": 222,
-          "children": 0,
-          "childPrice": 11,
-          "totalPrice": 222
-        }
-      ],
-      "total": 222,
-      "id": 17
     }
   ]
 }
