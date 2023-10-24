@@ -102,6 +102,30 @@ class ExcursionsAPI {
       throw new Error('Wystąpił błąd podczas usuwania wycieczki.');
     }
   }
+  async updateExcursion(updatedExcursion) {
+    const apiUrl = `http://localhost:3000/excursions/${updatedExcursion.id}`;
+
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedExcursion),
+    };
+
+    try {
+      const response = await fetch(apiUrl, options);
+      if (response.ok) {
+        const updatedData = await response.json();
+        return updatedData;
+      } else {
+        throw new Error('Błąd podczas aktualizacji wycieczki.');
+      }
+    } catch (error) {
+      console.error('Błąd komunikacji z API:', error);
+      throw new Error('Wystąpił błąd podczas aktualizacji wycieczki.');
+    }
+  }
 }
 
 export default ExcursionsAPI;

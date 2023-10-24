@@ -26,10 +26,9 @@ function renderExcursionsList(excursions) {
   excursionsList.innerHTML = '';
 
   excursions.forEach((excursion) => {
-    const excursionItem = document.createElement('div');
+    const excursionItem = document.createElement('li');
     excursionItem.className = 'excursions__item';
     excursionItem.innerHTML = `
-  <li class="excursions__item excursions__item--prototype">
           <header class="excursions__header">
             <h2 class="excursions__title">${excursion.title}</h2>
             <p class="excursions__description">
@@ -62,7 +61,7 @@ function renderExcursionsList(excursions) {
             <div class="excursions__field excursions__field--submit">
               <input
                 class="excursions__field-input excursions__field-input--submit"
-                value="dodaj do zamówinia"
+                value="dodaj do zamówienia"
                 type="submit"
                 id="addToCartButton"
               />
@@ -87,7 +86,7 @@ function renderCart() {
       <h3 class="summary__title">
         <span class="summary__name">${item.title}</span>
         <strong class="summay__total-price">${item.totalPrice} PLN</strong>
-           <a href="#" class="summary__btn-remove" title="usuń" data-item-index="${index}">X</a>
+           <a href="#" class="summary__btn-remove" title="usuń" data-item-index="${index}"> «« Usuń</a>
       </h3>
       <p class="summary__prices">dorośli: ${item.adults} x ${item.adultPrice} PLN, dzieci: ${item.children} x ${item.childPrice} PLN</p>
     `;

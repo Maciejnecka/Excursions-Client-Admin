@@ -1,45 +1,108 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+}
+
+.button-link:hover {
+  background-color: #0056b3;
 }
 
 .panel {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 30px 0;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 30px 0;
 }
 
-.panel__excursins {
-    width: 70%;
+.panel__excursions {
+  width: 65%;
 }
 
 .excursions {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.excurions__item {
-    border: 1px solid #bbb;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 20px;
-    width: calc(50% - 20px);
+.excursions__item {
+  border: 5px solid #bbb;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+  width: calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
 }
 
 .panel__form {
-    background-color: #f4f4f4;
-    padding: 20px;
-    width: 30%;
+  background-color: #f4f4f4;
+  padding: 20px;
+  width: 35%;
+  border-radius: 5px;
 }
 
-.uploader, .order {
-    border-bottom: 1px solid #bbb;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+.uploader,
+.order {
+  border-bottom: 1px solid #bbb;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.excursions__field-input,
+.order__field-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  resize: vertical;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.excursions__field-input:focus,
+.order__field-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+}
+
+.excursions__field-input--submit,
+.order__field-submit {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  margin: 10px auto;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.summary__btn-remove {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
 }
