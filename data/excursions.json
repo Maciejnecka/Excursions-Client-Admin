@@ -1,11 +1,11 @@
 {
   "excursions": [
     {
+      "id": 12,
       "title": "Historia i Kultura Gdańska",
       "description": "Odkryj fascynującą historię i kulturę Gdańska podczas tej wycieczki. Zwiedzaj Muzeum II Wojny Światowej, spaceruj po długim molo i poznawaj tajemnice tego urokliwego miasta. Cena biletu dla dorosłego: 230 PLN, cena biletu dla dziecka: 115 PLN",
-      "adultPrice": 230,
-      "childPrice": 115,
-      "id": 12
+      "adultPrice": 231,
+      "childPrice": 115
     },
     {
       "id": 13,
@@ -27,6 +27,13 @@
       "adultPrice": 430,
       "childPrice": 215,
       "id": 15
+    },
+    {
+      "title": "Test",
+      "description": "Testtest",
+      "adultPrice": 1,
+      "childPrice": 1,
+      "id": 16
     }
   ],
   "orders": [
@@ -101,6 +108,142 @@
       ],
       "total": 430,
       "id": 3
+    },
+    {
+      "name": "sdsd",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Morska Przygoda w Gdańsku",
+          "adults": 0,
+          "adultPrice": 150,
+          "children": 1,
+          "childPrice": 75,
+          "totalPrice": 75
+        },
+        {
+          "title": "Morska Przygoda w Gdańsku",
+          "adults": 0,
+          "adultPrice": 150,
+          "children": 1,
+          "childPrice": 75,
+          "totalPrice": 75
+        }
+      ],
+      "total": 150,
+      "id": 4
+    },
+    {
+      "name": "sdsd",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Morska Przygoda w Gdańsku",
+          "adults": 1,
+          "adultPrice": 150,
+          "children": 0,
+          "childPrice": 75,
+          "totalPrice": 150
+        },
+        {
+          "title": "Morska Przygoda w Gdańsku",
+          "adults": 1,
+          "adultPrice": 150,
+          "children": 0,
+          "childPrice": 75,
+          "totalPrice": 150
+        },
+        {
+          "title": "Morska Przygoda w Gdańsku",
+          "adults": 0,
+          "adultPrice": 150,
+          "children": 1,
+          "childPrice": 75,
+          "totalPrice": 75
+        }
+      ],
+      "total": 375,
+      "id": 5
+    },
+    {
+      "name": "sdsd",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Morska Przygoda w Gdańsku",
+          "adults": 3,
+          "adultPrice": 1503,
+          "children": 0,
+          "childPrice": 75,
+          "totalPrice": 4509
+        },
+        {
+          "title": "Morska Przygoda w Gdańsku",
+          "adults": 0,
+          "adultPrice": 1503,
+          "children": 1,
+          "childPrice": 75,
+          "totalPrice": 75
+        },
+        {
+          "title": "Historia i Kultura Gdańska",
+          "adults": 0,
+          "adultPrice": 230,
+          "children": 1,
+          "childPrice": 115,
+          "totalPrice": 115
+        }
+      ],
+      "total": 4699,
+      "id": 6
+    },
+    {
+      "name": "sdsd",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Morska Przygoda w Gdańsku",
+          "adults": 0,
+          "adultPrice": 150,
+          "children": 1,
+          "childPrice": 75,
+          "totalPrice": 75
+        },
+        {
+          "title": "Morska Przygoda w Gdańsku",
+          "adults": 1,
+          "adultPrice": 150,
+          "children": 0,
+          "childPrice": 75,
+          "totalPrice": 150
+        },
+        {
+          "title": "Historia i Kultura Gdańska",
+          "adults": 0,
+          "adultPrice": 230,
+          "children": 1,
+          "childPrice": 115,
+          "totalPrice": 115
+        }
+      ],
+      "total": 340,
+      "id": 7
+    },
+    {
+      "name": "sdsd",
+      "email": "scorpsnake001@gmail.com",
+      "items": [
+        {
+          "title": "Historia i Kultura Gdańska",
+          "adults": 1,
+          "adultPrice": 230,
+          "children": 1,
+          "childPrice": 115,
+          "totalPrice": 345
+        }
+      ],
+      "total": 345,
+      "id": 8
     }
   ]
 }
