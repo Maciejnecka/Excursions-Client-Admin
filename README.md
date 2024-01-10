@@ -1,121 +1,89 @@
+# JavaScript Fetch API - Excursions managment app 
 
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+The Excursions App is an intuitive platform that enables efficient management of tourist excursion offers in the administrator panel and provides a convenient order placement process for customers. The project has been implemented in JavaScript, utilizing HTML and CSS for the construction of an attractive user interface.
 
-&nbsp;
+See the live version
+[Soon... 🌐](#)
 
+Note: The view is currently under construction and will be updated soon. Thank you for your understanding.
+---
+## Admin view
+<div align="center">
+  <img src="./assets/ExcursionsAdminView.png" alt="Excursions admin view">
+</div>
 
-# JavaScript: API oraz FETCH
+---
+## Client view
+<div align="center">
+  <img src="./assets/ExcursionsClientView.png" alt="Excursions client view">
+</div>
 
-## Wprowadzenie
+---
 
-Wracamy do naszego zlecenia związanego z wycieczkami. Chcemy przebudować kod, wykorzystując nowo poznane informacje.
+## Functionalities
 
-Dzielimy naszą aplikację na dwie części. 
+### Displaying Excursions
+- The application fetches a list of available excursions from an external API.
 
-### Client
+### Adding Excursions
+- The form allows the addition of new excursions by entering data such as title, description, price for adults and children.
+- Data is validated, and a new excursion is added to the list and displayed on the page.
 
-To część związana z tym, co może zrobić użytkownik:
-* wybrać wycieczkę przez wprowadzenie ilości zamawianych biletów w odpowiednie pola formularza i kliknięcie `dodaj do zamówienia`. Wiąże się to z:
-    * walidacją danych
-    * dodawaniem zamówienia do panelu z prawej strony, tj. do koszyka
-    * aktualizowaniem ceny za całość
-* potwierdzić zamówienie poprzez wprowadzenie imienia, nazwiska oraz adresu email do pola zamówienia i kliknięcie `zamawiam`. Wiąże się to z:
-    * walidacją danych
-    * wysłaniem zamówienia do bazy danych (u nas to będzie API uruchomione dzięki JSON Server)
-    * wyczyszczeniem koszyka.
+### Editing and Removing Excursions
+- Each excursion has buttons for editing and removing, allowing for data updates and deletion of the excursion.
 
-Pliki powiązane:
-* `./src/index.html`
-* `./src/js/client.js`
-* `./src/css/client.css`
+### Adding to Cart
+- Customers can add excursions to the shopping cart by filling out a form with the quantities of tickets for adults and children.
+- The cart list is dynamically rendered on the page, and users can browse and remove excursions from the cart.
 
-### Admin    
-Panel zarządzania wycieczkami zapisanymi w bazie danych. Jego funkcjonalności to: 
-* dodawanie wycieczek
-* usuwanie wycieczek
-* modyfikowanie wycieczek.
+### Order Summary
+- After placing an order, the user receives an order summary in the form of a shopping list with the total price.
 
-Pliki powiązane:
-* `./src/admin.html`
-* `./src/js/admin.js`
-* `./src/css/admin.css`
+### Order Form Validation
+- The order form is validated for the correctness of the entered data.
+- The user receives an alert with information about errors if the data is invalid.
 
-## Implementacja
+## 💡 Technologies
 
-### Webpack
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![JSON Server](https://img.shields.io/badge/JSON%20Server-6f736d?style=for-the-badge&logo=JSON&logoColor=white)
+- ![REST API](https://img.shields.io/badge/REST%20API-4f736d?style=for-the-badge&logoColor=white)
+- ![BEM Methodology](https://img.shields.io/badge/BEM%20Methodology-29BDfD?style=for-the-badge&logo=BEM&logoColor=white)
+- ![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white)
 
-W tym zadaniu wykorzystamy webpacka, którego omawialiśmy w materiale dotyczącym ES2015+. 
+## 💿 Installation
 
-Zauważ, że posiada on dodatkową konfigurację, która obsługuje podział aplikacji na dwie części. Zwróć szczególną uwagę na tzw. [chunki](https://webpack.js.org/glossary/#c).
+1. First, perform a [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) (located at the top right corner of the page). This will create a copy of this repository on your GitHub account.
 
-Webpack zajmuje się również wczytaniem plików CSS (zobacz importy w `client.js` oraz `admin.js`) – dzieje się to dzięki odpowiednim loaderom dla plików o rozszerzeniu `.css` w `webpack.config.js`. Style są wczytywane do `<head>`, więc nie zdziw się, że pliki CSS nie są generowane.
+2. Clone the repository to your local machine using the [git clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) command.
 
-Pamiętaj, aby przed uruchomieniem webpacka zainstalować wszystkie zależności komendą
-```
-npm install
-```
-Potem dopiero możesz go uruchomić poprzez `npm start`.
+3. Navigate to the project directory:
 
-Jeśli chcesz odpalić wersję `client`, to wystarczy wpisać w przeglądarkę `http://localhost:8080/index.html`. Natomiast `admin` jest dostępny pod adresem: `http://localhost:8080/admin.html`.
+    ```bash
+    cd your-project-directory
+    ```
 
-> **Uwaga!** Jeśli nie widzisz poprawnych numerów linii kodu dla błędów w konsoli, to prawdopodobnie nie masz włączonej obsługi source maps dla plików JavaScript. Możesz to zmienić w [ustawieniach przeglądarki Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps).
+4. Install dependencies using [npm](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry):
 
-### JSON Server
+    ```bash
+    npm install
+    ```
 
-Podczas przerabiania materiałów zainstalowaliśmy globalnie JSON Server, dlatego teraz wystarczy, że go uruchomimy. Pamiętaj, że bez tego nasze API nie będzie działać. 
+5. JSON Server
+    ```bash
+    json-server --watch ./data/excursions.json
+    ```
 
-Odpalamy kolejny terminal (webpack już jest uruchomiony w jednym) i przechodzimy do katalogu głównego z zadaniem. Następnie wpisujemy do terminala:
-```
-json-server --watch ./data/excursions.json
-```
+6. Start the app:
 
-Od teraz API będzie dostępne pod adresem: http://localhost:3000. Zauważ jednak, że w pliku mamy dwa różne zasoby, czyli:
-* excursions
-* orders.
+    ```bash
+    npm start
+    ```
 
-W zależności od tego, na jakich danych będziesz chciał pracować, do `fetch()` przekażesz inny URL, tj.:
-* http://localhost:3000/excursions – zarządzanie wycieczkami
-* http://localhost:3000/orders – zarządzanie zamówieniami.
+Now you can work on tasks in your own repository and contribute to the project.
 
-### Fetch
+## 🙋‍♂️ Feel free to contact me
 
-Nasza komunikacja z uruchomionym API będzie się odbywać przy pomocy `fetch()`, który został opisany w materiałach tego modułu.
-
-Choć `fetch()` jest [wspierany przez najnowsze przeglądarki](https://caniuse.com/#feat=fetch), to nie powinniśmy zapominać o wsparciu dla tych starszych.
-
-W takim przypadku możemy wykorzystać tzw. [polyfill](https://pl.wikipedia.org/wiki/Polyfill), który doda niewspieraną przez przeglądarkę funkcjonalność.
-
-Możesz do tego wykorzystać [whatwg-fetch](https://github.com/github/fetch).
-
-### ExcursionsAPI
-
-W katalogu `./src/js` znajdziesz plik `ExcursionsAPI.js`, który zawiera klasę o tej samej nazwie.
-
-Został on stworzony, aby przechowywać w jednym miejscu całą komunikację z API.
-
-To tutaj powinny być zdefiniowane metody, które odpytują API, np. pozwalają pobrać wycieczki z bazy lub je do niej dodać.
-
-Ta klasa będzie używana zarówno po stronie `client`, jak i `admin`, dlatego też została już zaimportowana do obu plików JS odpowiedzialnych za każdą z części.
-
-### Prototypy
-
-Zauważ, że w kodzie występują prototypy (`.*--prototype`). Są one używane tylko po to, aby ułatwić prezentację danych.
-
-Docelowo mają być one niewidoczne – możesz je ukryć przy pomocy CSS (`display: none`). Warto je jednak wykorzystać do skopiowania struktury kodu HTML, aby nie musieć budować jej od podstaw w kodzie JS.
-
-## Podsumowanie
-
-Postaraj się wykonać to zadanie w taki sposób, aby zarządzanie wycieczkami było wygodne, a ich zamawianie intuicyjnie. 
-
-Miej cały czas z tyłu głowy, że może kiedyś nasz kod znów będzie trzeba przebudować lub wykorzystać w innym projekcie, dlatego powinien on być jak najbardziej elastyczny (zasada pojedynczej odpowiedzialności), a nazwy plików, klas i metod – dopasowane do zawartości i logiki działania tych elementów (tzw. [samodokumentujący się kod](https://en.wikipedia.org/wiki/Self-documenting_code)).
-
-Jeśli uznasz to za słuszne, możesz zmodyfikować kod HTML i CSS, aby zwiększyć funkcjonalność całego rozwiązania.
-
-
-&nbsp;
-
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maciek-n%C4%99cka/)
