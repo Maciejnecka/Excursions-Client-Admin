@@ -83,6 +83,7 @@ displayExcursions();
 document.querySelector('.form').addEventListener('submit', handleFormAdd);
 
 async function handleFormAdd(event) {
+  document.querySelector('.form').addEventListener('submit', handleFormAdd);
   event.preventDefault();
 
   const nameInput = document.getElementById('excursion-title');
@@ -110,7 +111,7 @@ async function handleFormAdd(event) {
       console.error('Błąd podczas dodawania wycieczki: ', error);
     }
   } else {
-    console.error('Błąd walidacji danych');
+    alert('Błąd: Wszystkie pola muszą być wypełnione');
   }
 }
 
@@ -132,14 +133,22 @@ async function handleRemoveClick(event) {
     const listItem = event.target.closest('li');
     if (!listItem) return;
 
-    const excursionId = listItem.getAttribute('data-id');
-    listItem.remove();
+    const excursionTitle =
+      listItem.querySelector('.excursions__title').textContent;
+    const shouldRemove = window.confirm(
+      `Are you sure you want to remove excursion "${excursionTitle}"?`
+    );
 
-    try {
-      const api = new ExcursionsAPI();
-      await api.removeExcursion(excursionId);
-    } catch (error) {
-      console.error('Błąd podczas usuwania wycieczki: ', error);
+    if (shouldRemove) {
+      const excursionId = listItem.getAttribute('data-id');
+      listItem.remove();
+
+      try {
+        const api = new ExcursionsAPI();
+        await api.removeExcursion(excursionId);
+      } catch (error) {
+        console.error('Błąd podczas usuwania wycieczki: ', error);
+      }
     }
   }
 }

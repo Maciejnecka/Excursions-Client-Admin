@@ -86,9 +86,9 @@ function renderCart() {
       <h3 class="summary__title">
         <span class="summary__name">${item.title}</span>
         <strong class="summary__total-price">${item.totalPrice} PLN</strong>
-           <a href="#" class="summary__btn-remove" title="usuń" data-item-index="${index}">«« Usuń</a>
       </h3>
       <p class="summary__prices">dorośli: ${item.adults} x ${item.adultPrice} PLN, dzieci: ${item.children} x ${item.childPrice} PLN</p>
+      <a href="#" class="summary__btn-remove" title="usuń" data-item-index="${index}">Usuń</a>
     `;
     cartList.appendChild(cartItem);
   });
@@ -146,8 +146,15 @@ function removeCartItem(e) {
   e.preventDefault();
   const itemIndex = e.target.getAttribute('data-item-index');
   if (itemIndex !== null) {
-    cart.splice(itemIndex, 1);
-    renderCart();
+    const excursionTitle = cart[itemIndex].title;
+    const userConfirmation = confirm(
+      `Are you sure you want to remove excursion "${excursionTitle}"?`
+    );
+
+    if (userConfirmation) {
+      cart.splice(itemIndex, 1);
+      renderCart();
+    }
   }
 }
 

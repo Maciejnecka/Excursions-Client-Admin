@@ -8,10 +8,16 @@ ul {
   list-style: none;
 }
 
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5dc;
+  color: #333;
+}
+
 .button-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #4caf50;
   color: #fff;
   text-decoration: none;
   border: none;
@@ -19,10 +25,11 @@ ul {
   cursor: pointer;
   text-align: center;
   font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .button-link:hover {
-  background-color: #0056b3;
+  background-color: #45a049;
 }
 
 .panel {
@@ -42,7 +49,8 @@ ul {
 }
 
 .excursions__item {
-  border: 5px solid #bbb;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
   border-radius: 5px;
   margin: 10px;
   padding: 20px;
@@ -51,8 +59,16 @@ ul {
   flex-direction: column;
 }
 
+.panel__summary li {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
 .panel__form {
   background-color: #f4f4f4;
+  border: 1px solid #ddd;
   padding: 20px;
   width: 35%;
   border-radius: 5px;
@@ -60,7 +76,7 @@ ul {
 
 .uploader,
 .order {
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
@@ -72,7 +88,7 @@ ul {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #333;
   resize: vertical;
   transition: border-color 0.3s, box-shadow 0.3s;
@@ -81,28 +97,43 @@ ul {
 .excursions__field-input:focus,
 .order__field-input:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px #007bff;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px #4caf50;
 }
 
 .excursions__field-input--submit,
 .order__field-submit {
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 2px;
   padding: 10px 20px;
   margin: 10px auto;
-  background-color: #007bff;
+  background-color: #4caf50;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   width: 100%;
+  transition: background-color 0.3s;
+}
+
+.excursions__field-input--submit:hover,
+.order__field-submit:hover {
+  background-color: #45a049;
 }
 
 .summary__btn-remove {
-  color: #ff0000;
+  display: flex;
+  justify-content: center;
+  background-color: #ff0000;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 15px 0;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
+  transition: all 0.3s;
+}
+.summary__btn-remove:hover {
+  background-color: #d20000;
 }
