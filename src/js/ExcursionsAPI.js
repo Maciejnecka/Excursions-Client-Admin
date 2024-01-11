@@ -1,6 +1,7 @@
 class ExcursionsAPI {
   constructor() {
-    this.apiUrl = 'http://localhost:3000/excursions';
+    this.apiUrl =
+      'https://my-json-server.typicode.com/Maciejnecka/JsonDB/excursions';
   }
 
   async fetchData(apiUrl) {
@@ -13,7 +14,8 @@ class ExcursionsAPI {
   }
 
   async sendOrder(orderData) {
-    const apiUrl = 'http://localhost:3000/orders';
+    const apiUrl =
+      'https://my-json-server.typicode.com/Maciejnecka/JsonDB/orders';
     const options = {
       method: 'POST',
       headers: {
