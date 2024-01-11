@@ -1,9 +1,12 @@
 # JavaScript Fetch API - Excursions managment app 
 
-The Excursions App is an intuitive platform that enables efficient management of tourist excursion offers in the administrator panel and provides a convenient order placement process for customers. The project has been implemented in JavaScript, utilizing HTML and CSS for the construction of an attractive user interface.
+An intuitive platform enabling efficient management of a tourist
+excursion offering in the administrator panel, as well as convenient
+order placement for customers. The project was implemented
+using JavaScript, with HTML and CSS utilized for building the user
+interface.
 
-See the live version
-[Soon... 🌐](#)
+See the live version: [Live demo - Excursions app](https://maciejnecka.github.io/Excursions-Client-Admin/)🌐
 
 Note: The view is currently under construction and will be updated soon. Thank you for your understanding.
 ---
